@@ -10,6 +10,7 @@ export const log = (message: string) => {
 
 export const warn = (message: string) => {
 	console.warn(
+		`%c${thena.color('[RelaGit]', 'yellow')}%c ${thena.color(message, thena.ASCII.reset)}`,
 		'color: #e5c062;',
 		'color: #fff;'
 	);
