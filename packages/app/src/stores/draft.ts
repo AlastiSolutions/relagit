@@ -5,13 +5,13 @@ const nullish = {
 	description: ''
 };
 
-export interface MesssageDraft {
+export interface MessageDraft {
 	message: string;
 	description: string;
 }
 
 const DraftStore = new (class DraftStore extends GenericStore {
-	#record: Map<string, MesssageDraft | null> = new Map();
+	#record: Map<string, MessageDraft | null> = new Map();
 
 	constructor() {
 		super();
@@ -29,7 +29,7 @@ const DraftStore = new (class DraftStore extends GenericStore {
 		);
 	}
 
-	setDraft(repository: Repository | string | undefined, draft: MesssageDraft | null) {
+	setDraft(repository: Repository | string | undefined, draft: MessageDraft | null) {
 		if (!repository) return;
 
 		this.drafts.set(typeof repository === 'string' ? repository : repository.id, draft);
