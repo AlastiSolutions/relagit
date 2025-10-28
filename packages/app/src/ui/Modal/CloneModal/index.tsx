@@ -49,7 +49,7 @@ const fileValidator = (path: string) => {
 		fs.opendirSync(path);
 
 		isDirectory = true;
-	} catch (e) {
+	} catch {
 		isDirectory = false;
 	}
 

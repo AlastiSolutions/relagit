@@ -636,8 +636,7 @@ export default (props: CodeViewProps) => {
 																		<div
 																			{...(lineBlame && p)}
 																			classList={{
-																				codeview__line:
-																					true,
+																				codeview__line: true,
 																				[status()]: true
 																			}}
 																		>
@@ -651,8 +650,7 @@ export default (props: CodeViewProps) => {
 																			</div>
 																			<div
 																				classList={{
-																					codeview__line__indicator:
-																						true,
+																					codeview__line__indicator: true,
 																					[status()]: true
 																				}}
 																			>
@@ -783,10 +781,8 @@ export default (props: CodeViewProps) => {
 																						{...(lineBlame &&
 																							p)}
 																						classList={{
-																							codeview__line:
-																								true,
-																							[lineStatus]:
-																								true
+																							codeview__line: true,
+																							[lineStatus]: true
 																						}}
 																					>
 																						<div
@@ -811,10 +807,8 @@ export default (props: CodeViewProps) => {
 																						</div>
 																						<div
 																							classList={{
-																								codeview__line__indicator:
-																									true,
-																								[lineStatus]:
-																									true
+																								codeview__line__indicator: true,
+																								[lineStatus]: true
 																							}}
 																						>
 																							<Show

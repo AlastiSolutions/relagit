@@ -56,7 +56,7 @@ export const Commit = async (
 				signingOptions.push(`--gpg-sign=${keyId.trim()}`);
 			}
 		}
-	} catch (e) {
+	} catch {
 		// Ignore
 	}
 

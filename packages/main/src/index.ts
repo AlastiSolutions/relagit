@@ -173,6 +173,7 @@ const constructWindow = async () => {
 	});
 
 	win.on('move', () => {
+		if (win.isDestroyed()) return;
 		updateSettings({
 			window: {
 				...settings.window,
@@ -183,6 +184,7 @@ const constructWindow = async () => {
 	});
 
 	win.on('resize', () => {
+		if (win.isDestroyed()) return;
 		updateSettings({
 			window: {
 				...settings.window,
@@ -517,6 +519,8 @@ const onLoaded = (cb: (window: BrowserWindow) => void) => {
 
 app.on('open-url', (_, url) => {
 	onLoaded((window) => {
+		if (window.isDestroyed()) return;
+
 		if (window.isMinimized()) {
 			window.restore();
 		}
@@ -535,6 +539,8 @@ app.on('open-url', (_, url) => {
 
 app.on('second-instance', (_, commandLine) => {
 	onLoaded((window) => {
+		if (window.isDestroyed()) return;
+
 		if (window.isMinimized()) {
 			window.restore();
 		}
@@ -557,10 +563,14 @@ app.on('open-file', (e, path) => {
 	e.preventDefault();
 
 	onLoaded((window) => {
+		if (window.isDestroyed()) return;
 		window.webContents.send(ipc.OPEN_ADD, path);
 	});
 });
 
 if (process.argv.slice(2)[0]) {
-	onLoaded((window) => window.webContents.send(ipc.OPEN_ADD, process.argv.slice(2)[0]));
+	onLoaded((window) => {
+		if (window.isDestroyed()) return;
+		window.webContents.send(ipc.OPEN_ADD, process.argv.slice(2)[0]);
+	});
 }

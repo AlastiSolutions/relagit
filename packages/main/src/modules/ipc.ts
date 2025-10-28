@@ -28,7 +28,7 @@ const preloadPathEnv = () => {
 		const path = child_process.execSync(command).toString().trim();
 
 		return Object.assign(process.env, { PATH: path });
-	} catch (error) {
+	} catch {
 		return process.env;
 	}
 };
@@ -71,7 +71,7 @@ export default (window: BrowserWindow) => {
 						});
 
 						return img.toDataURL();
-					} catch (error) {
+					} catch {
 						continue;
 					}
 				}
@@ -87,7 +87,7 @@ export default (window: BrowserWindow) => {
 			});
 
 			return img.toDataURL();
-		} catch (error) {
+		} catch {
 			return null;
 		}
 	});
@@ -120,7 +120,7 @@ export default (window: BrowserWindow) => {
 			});
 
 			return new TextDecoder().decode(path);
-		} catch (error) {
+		} catch {
 			return false;
 		}
 	});
@@ -211,5 +211,6 @@ export default (window: BrowserWindow) => {
 };
 
 export const dispatch = (channel: string, ...args: unknown[]) => {
-	return win?.webContents.send(channel, ...args);
+	if (!win || win.isDestroyed()) return;
+	return win.webContents.send(channel, ...args);
 };

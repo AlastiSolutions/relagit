@@ -187,7 +187,7 @@ const SettingsStore = new (class SettingsStore extends GenericStore {
 
 			try {
 				json = json.replace(/(?<! )}\s?}$/, '}'); // attempt to recover from corrupt settings file
-			} catch (error) {}
+			} catch {}
 
 			try {
 				settings = JSON.parse(json) as Settings;

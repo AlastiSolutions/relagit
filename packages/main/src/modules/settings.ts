@@ -58,7 +58,7 @@ export const getSettings = async (): Promise<RecursivePartial<Settings>> => {
 		lastSettings = res;
 
 		return res;
-	} catch (e) {
+	} catch {
 		return lastSettings || {};
 	}
 };

@@ -40,6 +40,12 @@ const setTimeout = (fn: () => void, delay: number): NodeJS.Timeout => {
 		hasRef: () => {
 			return true;
 		},
+		_onTimeout() {
+			return obj;
+		},
+		close() {
+			return obj;
+		},
 		refresh: () => {
 			return obj;
 		},
@@ -79,6 +85,7 @@ export default (code: string, filename: string) => {
 			clearTimeout,
 			{ exports: {} },
 			(path: string) => {
+				// eslint-disable-next-line @typescript-eslint/no-require-imports
 				return require(path);
 			},
 			{}

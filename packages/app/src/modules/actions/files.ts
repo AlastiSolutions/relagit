@@ -55,7 +55,7 @@ const isDirectory = async (file: string) => {
 		await promises.opendir(file); // we are specifically NOT closing this, it will be picked up by the gc.
 
 		return true;
-	} catch (error) {
+	} catch {
 		return false;
 	}
 };
@@ -250,7 +250,7 @@ export const getRepositoryStatus = async (
 					lastFetched: Date.now()
 				});
 			}
-		} catch (error) {
+		} catch {
 			if (exists) {
 				RepositoryStore.updateRepository(exists.id, {
 					lastFetched: Date.now()

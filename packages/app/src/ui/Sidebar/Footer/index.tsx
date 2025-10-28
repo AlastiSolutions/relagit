@@ -200,7 +200,7 @@ export default (props: { showingSignal: Signal<boolean> }) => {
 												}
 
 												setGenerating(false);
-											} catch (e) {
+											} catch {
 												setGenError(true);
 
 												return setGenerating(false);

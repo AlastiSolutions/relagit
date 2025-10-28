@@ -1,4 +1,4 @@
-import * as Sentry from '@sentry/electron/renderer';
+// import * as Sentry from '@sentry/electron/renderer';
 import { For, Signal, createEffect, createSignal, onMount } from 'solid-js';
 
 import { triggerWorkflow } from '@app/modules/actions';
@@ -70,7 +70,7 @@ export default (props: AddRepositoryModalProps) => {
 			fs.opendirSync(p);
 
 			isDirectory = true;
-		} catch (e) {
+		} catch {
 			isDirectory = false;
 		}
 
@@ -202,8 +202,8 @@ export default (props: AddRepositoryModalProps) => {
 								label={t('modal.repository.addRepo')}
 								type="brand"
 								onClick={() => {
-									if (SettingsStore.getSetting('telemetry.metrics') !== false)
-										Sentry.metrics.increment('repository.added', 1);
+									// if (SettingsStore.getSetting('telemetry.metrics') !== false)
+									// 	Sentry.metrics.increment('repository.added', 1);
 
 									SettingsStore.setSetting('repositories', [
 										...SettingsStore.getSetting('repositories'),

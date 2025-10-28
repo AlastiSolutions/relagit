@@ -402,7 +402,6 @@ interface Actions {
 	};
 }
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
 // NOTE: these are just here for prettier to not complain about unknown variables
 // @ts-ignore
 const Workflow = '',
@@ -422,7 +421,6 @@ const Workflow = '',
 	codeview = '',
 	// @ts-ignore
 	cron = '';
-/* eslint-enable @typescript-eslint/no-unused-vars */
 
 declare module 'relagit:actions' {
 	const { Workflow, defineWorkflow, context, notifications, app, menu, codeview, cron }: Actions;
