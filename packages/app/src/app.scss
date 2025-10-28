@@ -1,3 +1,4 @@
+/* stylelint-disable scss/operator-no-newline-after */
 @use 'illyrica/primitives' as illyrica;
 @use 'illyrica/mixins' as mixins;
 @use 'illyrica/os' as *;
@@ -7,14 +8,22 @@
 @import 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono';
 
 @function greyscale($color) {
-	$grey: calc((color.red($color) + color.green($color) + color.blue($color)) / 3);
+	$grey: calc(
+		(
+				color.channel($color, 'red', $space: rgb) +
+					color.channel($color, 'green', $space: rgb) +
+					color.channel($color, 'blue', $space: rgb)
+			) /
+			3
+	);
 
-	@return rgba($grey, $grey, $grey, alpha($color));
+	@return rgba($grey, $grey, $grey, color.alpha($color));
 }
 
 @mixin light-theme {
-	--font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
-		Cantarell, 'Helvetica Neue', sans-serif;
+	--font-primary:
+		-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+		'Helvetica Neue', sans-serif;
 	--font-mono: var(--settings-font-family, 'SF Mono', 'Fira Code', monospace);
 	--color-contrast: var(--base-black);
 	--color-primary: var(--base-dark-grey);
@@ -56,8 +65,9 @@
 }
 
 @mixin dark-theme {
-	--font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
-		Cantarell, 'Helvetica Neue', sans-serif;
+	--font-primary:
+		-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+		'Helvetica Neue', sans-serif;
 	--font-mono: var(--settings-font-family, 'SF Mono', 'Fira Code', monospace);
 	--color-contrast: var(--base-white);
 	--color-primary: var(--dark-base-dark-grey);
