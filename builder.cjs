@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
+/* eslint-disable @typescript-eslint/no-require-imports */
 const cp = require('child_process');
 const fs = require('fs');
 const util = require('util');
@@ -49,7 +48,7 @@ const config = {
 			const cmd = 'codesign --force --deep -s - ./out/mac-arm64/RelaGit.app';
 
 			await exec(cmd);
-		} catch (err) {
+		} catch {
 			console.warn('Failed to sign arm64');
 		}
 
@@ -57,7 +56,7 @@ const config = {
 			const cmd = 'codesign --force --deep -s - ./out/mac/RelaGit.app';
 
 			await exec(cmd);
-		} catch (err) {
+		} catch {
 			console.warn('Failed to sign x64');
 		}
 	},
