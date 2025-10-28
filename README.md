@@ -33,29 +33,29 @@
 
 Builds are generated automatically upon [release](https://github.com/relagit/relagit/releases).
 
--   [macOS (Intel)](https://github.com/relagit/relagit/releases/latest/download/RelaGit-mac-x64.dmg)
--   [macOS (Apple Silicon)](https://github.com/relagit/relagit/releases/latest/download/RelaGit-mac-arm64.dmg)
--   [Windows](https://github.com/relagit/relagit/releases/latest/download/RelaGit-win.zip)
--   [Linux (rpm)](https://github.com/relagit/relagit/releases/latest/download/RelaGit-linux.rpm)
--   [Linux (tar.gz)](https://github.com/relagit/relagit/releases/latest/download/RelaGit-linux.tar.gz)
--   [Linux (deb)](https://github.com/relagit/relagit/releases/latest/download/RelaGit-linux.deb)
+- [macOS (Intel)](https://github.com/relagit/relagit/releases/latest/download/RelaGit-mac-x64.dmg)
+- [macOS (Apple Silicon)](https://github.com/relagit/relagit/releases/latest/download/RelaGit-mac-arm64.dmg)
+- [Windows](https://github.com/relagit/relagit/releases/latest/download/RelaGit-win.zip)
+- [Linux (rpm)](https://github.com/relagit/relagit/releases/latest/download/RelaGit-linux.rpm)
+- [Linux (tar.gz)](https://github.com/relagit/relagit/releases/latest/download/RelaGit-linux.tar.gz)
+- [Linux (deb)](https://github.com/relagit/relagit/releases/latest/download/RelaGit-linux.deb)
 
 ## Roadmap
 
 Before we hit the first stable release, the following features should be implemented:
 
--   [x] Support for git submodules.
--   [x] Optimisation of git processes and operations, currently there is noticable CPU strain on startup.
--   [x] Commit graph in information modal.
--   [ ] Use libgit2 for git operations instead of the git CLI. (?)
+- [x] Support for git submodules.
+- [x] Optimisation of git processes and operations, currently there is noticable CPU strain on startup.
+- [x] Commit graph in information modal.
+- [ ] Use libgit2 for git operations instead of the git CLI. (?)
 
 ## Building
 
 ### Prerequisites
 
--   [Node.js](https://nodejs.org/en/) (v18 or higher)
--   [pnpm](https://pnpm.io/)
--   [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en/) (v18 or higher)
+- [pnpm](https://pnpm.io/)
+- [Git](https://git-scm.com/)
 
 ### Instructions
 
